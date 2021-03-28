@@ -1,0 +1,51 @@
+{% extends 'index.html.twig' %}
+        {% block contenu %}
+
+            {% block ajoutProduit %}
+             {% for label, messages in app.flashes(['success']) %}
+                {% for message in messages %}
+                    <div class"alert alert-info">{{ message }}</div>
+                {% endfor %}
+             {% endfor %}
+                {{ form_start(form) }}
+                <div class="container tm-mt-big tm-mb-big">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 class="tm-block-title d-inline-block">Add Product</h2>
+                                    </div>
+                                </div>
+                                <div class="row tm-edit-product-row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12">
+                                                <div class="form-group mb-3">
+                                                    {{ form_label(form.reference) }}
+                                                    {{ form_widget(form.reference, {'attr': {'class': 'form-control validate', 'required': true }}) }}
+                                                    {{ form_errors(form.reference) }}
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    {{ form_label(form.nomproduit) }}
+                                                    {{ form_widget(form.nomproduit, {'attr': {'class': 'form-control validate', 'required': true }}) }}
+                                                    {{ form_errors(form.nomproduit) }}
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    {{ form_label(form.quantite) }}
+                                                    {{ form_widget(form.quantite, {'attr': {'class': 'form-control validate', 'required': true }}) }}
+                                                    {{ form_errors(form.quantite) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                {{ form_label(form.save) }}
+                                                {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary btn-block text-uppercase' }}) }}
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            {% endblock ajoutProduit %}
+
+        {% endblock contenu %}
+

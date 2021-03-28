@@ -1,0 +1,65 @@
+{% extends 'index.html.twig' %}
+        {% block contenu %}
+
+            {% block ajoutUser %}
+
+            {% for label, messages in app.flashes(['success']) %}
+                {% for message in messages %}
+                    <div class"alert alert-info">{{ message }}</div>
+                {% endfor %}
+            {% endfor %}
+
+                {{ form_start(form) }}
+                <div class="" id="home">
+                    <div class="container mt-5">
+                        <!-- row -->
+                        <div class="row tm-content-row">
+                        
+                        <div class="tm-block-col tm-col-account-settings">
+                            <div class="tm-bg-primary-dark tm-block tm-block-settings">
+                            <h2 class="tm-block-title">Account Settings</h2>
+                            <form action="" class="tm-signup-form row" method="post">
+                                <div class="form-group col-lg-6">
+                                    {{ form_label(form.nom) }}
+                                    {{ form_widget(form.nom, {'attr': {'class': 'form-control validate', 'required': 'required' }}) }}
+                                    {{ form_errors(form.nom) }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    {{ form_label(form.prenom) }}
+                                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control validate', 'required': 'required' }}) }}
+                                    {{ form_errors(form.prenom) }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    {{ form_label(form.email) }}
+                                    {{ form_widget(form.email, {'attr': {'class': 'form-control validate', 'required': 'required' }}) }}
+                                    {{ form_errors(form.email) }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    {{ form_label(form.password) }}
+                                    {{ form_widget(form.password, {'attr': {'class': 'form-control validate', 'required': 'required' }}) }}
+                                    {{ form_errors(form.password) }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    {{ form_label(form.telephone) }}
+                                    {{ form_widget(form.telephone, {'attr': {'class': 'form-control validate', 'required': 'required' }}) }}
+                                    {{ form_errors(form.telephone) }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    {{ form_label(form.etat) }}
+                                    {{ form_widget(form.etat, {'attr': {'class': 'form-control validate', 'required': 'required' }}) }}
+                                    {{ form_errors(form.etat) }}
+                                </div>
+                                <div class="col-12">
+                                    {{ form_label(form.save) }}
+                                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary btn-block text-uppercase' }}) }}
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+            {% endblock ajoutUser %}
+
+        {% endblock contenu %}
+

@@ -1,0 +1,36 @@
+index:
+    path: /suivistock
+    controller: App\Controller\AppController::index
+list_produits:
+    path: /suivistock/produits
+    controller: App\Controller\ProduitController::list
+ajouter_produit:
+    path: /suivistock/produits/nouveau
+    controller: App\Controller\ProduitController::ajouter
+modifier_produit:
+    path: /suivistock/produits/{produit_id}/modifier
+    controller: App\Controller\ProduitController::modifier
+supprimer_produit:
+    path: /suivistock/produits/{produit_id}/supprimer
+    controller: App\Controller\ProduitController::supprimer
+list_users:
+    path: /suivistock/users
+    controller: App\Controller\UserController::list
+ajouter_user:
+    path: /suivistock/users/nouveau
+    controller: App\Controller\UserController::ajouter
+modifier_user:
+    path: /suivistock/users/{user_id}/modifier
+    controller: App\Controller\UserController::modifier
+supprimer_user:
+    path: /suivistock/users/{user_id}/supprimer
+    controller: App\Controller\UserController::supprimer
+login:
+    path: /suivistock/login
+    controller: App\Security\LoginFormController::login
+login_check:
+    path: /suivistock/login/check
+    controller: App\Security\LoginFormController::checkLogin
+logout:
+    path: /suivistock/logout
+    controller: App\Security\LoginFormController::logout
